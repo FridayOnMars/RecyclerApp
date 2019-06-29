@@ -1,6 +1,7 @@
 package com.example.recycle;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -14,12 +15,12 @@ import java.util.List;
 public class MainActivity extends Activity {
 
     List<GetApps> apps = new ArrayList<>();
-
+Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+dialog = new Dialog(MainActivity.this);
         setData();
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -45,5 +46,8 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
         }
+    }
+    public void DialogCall(){
+
     }
 }
