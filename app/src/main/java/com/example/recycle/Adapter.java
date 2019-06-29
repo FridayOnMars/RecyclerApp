@@ -1,11 +1,8 @@
 package com.example.recycle;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.support.v4.app.Fragment;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +15,20 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private LayoutInflater inflater;
     private List<GetApps> apps;
-//    private Activity activity;
+    FragmentCallToActivity connect;
+
+    public interface FragmentCallToActivity{
+        void getInfoForDialog(String nameApp, String namePackage, Drawable icon);
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        Context context = recyclerView.getContext();
+        if(context instanceof FragmentCallToActivity){
+            connect = (FragmentCallToActivity) context;
+        }
+    }
 
     Adapter(Context context, List<GetApps> apps){
         this.apps = apps;
@@ -37,11 +47,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // final Dialog dialog = new Dialog(activity);
-//                dialog.setContentView(R.layout.activity_main);
-//                dialog.setCancelable(true);
-              //  dialog.show();
-                holder.namePackageView.setText("Я нажался!");
+                holder.namePackageView.setText("111");
+                connect.getInfoForDialog(holder.nameAppView.getText().toString(),holder.namePackageView.getText().toString(),holder.iconView.getDrawable());
             }
         });
         holder.nameAppView.setText(getApps.getNameApp());

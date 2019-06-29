@@ -5,14 +5,17 @@ import android.app.Dialog;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements Adapter.FragmentCallToActivity {
 
     List<GetApps> apps = new ArrayList<>();
 Dialog dialog;
@@ -47,7 +50,18 @@ dialog = new Dialog(MainActivity.this);
             }
         }
     }
-    public void DialogCall(){
 
+    @Override
+    public void getInfoForDialog(String nameApp, String namePackage, Drawable icon) {
+        Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setTitle("App Info");
+        dialog.setContentView(R.layout.list_item_app);
+        TextView nameAppView = dialog.findViewById(R.id.tvNameApp);
+        TextView namePackageView = dialog.findViewById(R.id.tvNamePackage);
+        ImageView iconView = dialog.findViewById(R.id.ivIcon);
+        nameAppView.setText(nameApp);
+        namePackageView.setText(namePackage);
+        iconView.setImageDrawable(icon);
+        dialog.show();
     }
 }
