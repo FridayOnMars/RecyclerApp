@@ -47,7 +47,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.namePackageView.setText("111");
                 connect.getInfoForDialog(holder.nameAppView.getText().toString(),holder.namePackageView.getText().toString(),holder.iconView.getDrawable());
             }
         });
