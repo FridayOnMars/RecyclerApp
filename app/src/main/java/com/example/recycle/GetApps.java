@@ -3,10 +3,11 @@ package com.example.recycle;
 import android.graphics.drawable.Drawable;
 
 class GetApps {
-    private String nameApp, namePackage, version, versionCode;
+    private String nameApp, namePackage, version;
+    private int versionCode;
     private Drawable image;
 
-    GetApps(String nameApp, String namePackage, String version, String versionCode, Drawable image) {
+    GetApps(String nameApp, String namePackage, String version, int versionCode, Drawable image) {
         this.nameApp = nameApp;
         this.namePackage = namePackage;
         this.version = version;
@@ -26,7 +27,7 @@ class GetApps {
         return version;
     }
 
-    String getVersionCode() {
+    int getVersionCode() {
         return versionCode;
     }
 

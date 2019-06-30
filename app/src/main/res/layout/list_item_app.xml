@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginBottom="6dp"
+    android:layout_marginBottom="3dp"
     android:padding="12dp"
     android:background="@android:color/white">
     <ImageView
@@ -11,11 +11,13 @@
         android:layout_width="50dp"
         android:layout_alignParentStart="true"
         android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
         android:padding="3dp"
         android:scaleType="centerCrop" />
     <TextView
         android:id="@+id/tvNameApp"
         android:layout_width="wrap_content"
+        android:paddingTop="3dp"
         android:textStyle="bold"
         android:layout_toEndOf="@+id/ivIcon"
         android:layout_height="wrap_content" />
@@ -25,14 +27,4 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvNameApp"
         android:layout_toEndOf="@+id/ivIcon"/>
-    <!--<TextView-->
-        <!--android:id="@+id/tvVersion"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/ivIcon"/>-->
-    <!--<TextView-->
-        <!--android:id="@+id/tvVersionCode"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_below="@+id/tvVersion"-->
-        <!--android:layout_height="wrap_content" />-->
 </RelativeLayout>
