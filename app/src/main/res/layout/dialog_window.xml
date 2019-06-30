@@ -12,26 +12,44 @@
     <TextView
         android:id="@+id/tvDialogNameApp"
         android:layout_width="wrap_content"
-        android:textSize="25sp"
+        android:textSize="22sp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivDialogIcon"
+        android:text="@string/text_dialogNameApp"
         android:layout_centerHorizontal="true"/>
     <TextView
         android:id="@+id/tvDialogNamePackage"
         android:layout_width="wrap_content"
+        android:textColor="@android:color/darker_gray"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_below="@+id/tvDialogNameApp"
+        android:text="@string/text_dialogNamePackage"
         android:layout_centerHorizontal="true" />
     <TextView
         android:id="@+id/tvDialogVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvDialogNamePackage"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="4dp"
+        android:text="@string/format_dialogVersion"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvDialogNamePackage" />
     <TextView
         android:id="@+id/tvDialogVersionCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_below="@+id/tvDialogVersion"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:text="@string/text_dialogVersionCode"/>
+    <Button
+        android:id="@+id/btClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/tvDialogVersionCode"
+        android:layout_centerInParent="true"
+        android:text="@string/button_close"/>
 </RelativeLayout>

@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Recycle</string>
+    <string name="app_name">App list</string>
+    <string name="text_nameApp"> </string>
+    <string name="text_namePackage"> </string>
+    <string name="format_dialogVersion">Version: %s</string>
+    <string name="text_dialogVersionCode" />
+    <string name="text_dialogNamePackage" />
+    <string name="text_dialogNameApp" />
+    <string name="button_close">закрыть</string>
 </resources>
